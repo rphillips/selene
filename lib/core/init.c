@@ -77,7 +77,7 @@ sln_create(selene_t **p_sel, sln_mode_e mode)
 
   SELENE_ERR(sln_backend_create(s));
 
-  SELENE_ERR(s->backend.create(s));
+  SELENE_ERR(s->backend.init(s));
 
   SLN_ASSERT_CONTEXT(s);
 

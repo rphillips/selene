@@ -33,7 +33,7 @@ sln_backend_terminate(void);
 
 #if defined(WANT_OPENSSL_THREADED)
 selene_error_t*
-sln_openssl_threaded_create(selene_t *s);
+sln_openssl_threaded_init(selene_t *s);
 
 selene_error_t*
 sln_openssl_threaded_destroy(selene_t *s);

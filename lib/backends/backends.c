@@ -65,7 +65,7 @@ sln_backend_create(selene_t *s)
 {
 #if defined(WANT_OPENSSL_THREADED)
   s->backend.name = "openssl_threaded";
-  s->backend.create = sln_openssl_threaded_create;
+  s->backend.init = sln_openssl_threaded_init;
   s->backend.destroy = sln_openssl_threaded_destroy;
 #else
   return selene_error_createf(SELENE_EINVAL, "no backend available");

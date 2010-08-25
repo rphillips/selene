@@ -79,7 +79,7 @@ sln_openssl_event_cb(selene_t *s, selene_event_e event, void *unused_baton)
 }
 
 selene_error_t*
-sln_openssl_threaded_create(selene_t *s)
+sln_openssl_threaded_init(selene_t *s)
 {
   sln_ot_baton_t *baton;
   pthread_attr_t attr;
