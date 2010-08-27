@@ -24,6 +24,7 @@ core/error.c
 core/event.c
 core/init.c
 core/log.c
+core/tls.c
 io/buckets.c
 io/brigades.c
 io/io.c

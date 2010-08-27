@@ -21,6 +21,7 @@
 #include "sln_events.h"
 #include "sln_backends.h"
 #include "sln_assert.h"
+#include "sln_tls.h"
 
 static int initialized = 0;
 
@@ -121,5 +122,11 @@ selene_destroy(selene_t *s)
 selene_error_t*
 selene_start(selene_t *s)
 {
-  return selene_error_create(SELENE_ENOTIMPL, "start isn't done");
+  const char *hello_world = "hello world";
+  sln_tls_record_t r;
+  r.content_type = SLN_TLS_CTYPE_HANDSHAKE;
+  r.version = SLN_TLS_VERSION_SSL30;
+  r.protocol_data = (void*)hello_world;
+  r.protocol_size = sizeof(hello_world);
+  return sln_tls_write(s, &r);
 }
